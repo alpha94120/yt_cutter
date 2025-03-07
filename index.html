@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découpe Vidéo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #FFF;
+            text-align: center;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #FF0000;
+            background-color: #222;
+        }
+        input, button, select {
+            background-color: #FF0000;
+            color: white;
+            padding: 10px;
+            border: none;
+            margin-top: 10px;
+        }
+        input[type="file"] {
+            background-color: transparent;
+            border: none;
+            color: #FFF;
+        }
+        input[type="text"], input[type="number"] {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Découper une Vidéo</h1>
+
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="video">Choisir une vidéo :</label>
+            <input type="file" name="video" accept="video/*" required><br><br>
+
+            <label for="start_time">Début du découpage (en secondes) :</label>
+            <input type="number" id="start_time" name="start_time" value="0"><br><br>
+
+            <label for="duration">Durée de chaque extrait (en secondes) :</label>
+            <input type="number" id="duration" name="duration" value="60"><br><br>
+
+            <label for="format">Choisir le format :</label><br>
+            <input type="checkbox" name="format" value="9:16"> Format 9:16<br>
+            <input type="checkbox" name="format" value="16:9"> Format 16:9<br><br>
+
+            <button type="submit" name="submit">Découper la Vidéo</button>
+        </form>
+    </div>
+
+</body>
+</html>
