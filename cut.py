@@ -7,22 +7,6 @@ from tkinter import filedialog, messagebox
 from moviepy.editor import VideoFileClip
 import time
 
-# Liste des bibliothèques nécessaires
-required_libraries = ['moviepy', 'tkinter']
-
-# Fonction pour installer les bibliothèques manquantes
-def install_libraries():
-    for library in required_libraries:
-        try:
-            # Vérifie si la bibliothèque est déjà installée
-            __import__(library)
-        except ImportError:
-            print(f"Installation de {library}...")
-            subprocess.check_call([sys.executable, "-m", "pip", "install", library])
-
-# Installation des bibliothèques nécessaires avant d'exécuter le reste du code
-install_libraries()
-
 # Redirection de la sortie standard vers le widget Text de tkinter
 class RedirectText:
     def __init__(self, widget):
